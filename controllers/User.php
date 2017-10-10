@@ -7,7 +7,7 @@
  */
 
 
-class Profile extends Controller {
+class User extends Controller {
 
     public function index()
     {
