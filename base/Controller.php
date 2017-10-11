@@ -28,8 +28,7 @@ class Controller extends Application
     public function render($view, $params = null)
     {
         $view_folder = self::$view_folder;
-        $render = new Render($this->layout);
-        $render->render($view, $params, $view_folder);
+        $render = new Render($this->layout, $view_folder, $view, $params);
     }
 
 }

@@ -7,9 +7,11 @@
  */
 ?>
 
-
-<?= "lets play the game"; ?>
-
-
-<p><?= $param1 ?> </p>
-<p><?= $param2 ?> </p>
+<?
+/*
+    foreach($users as $user)
+    {
+        echo $user['username'] . '<br>';
+    }
+*/
+?>

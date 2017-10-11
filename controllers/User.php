@@ -11,12 +11,19 @@ class User extends Controller {
 
     public function index()
     {
-        $model = "index_first";
+        $model = new UserModel();
+        //$users = $model->getAllUsers();
+        //$create_user = $model->createUser();
+        //$update_user = $model->updateUser();
+        $delete_user = $model->deleteUser();
+        
+
         $form  = "index_second";
 
         $this->render('index', [
             "param1" => $model,
             "param2" => $form,
+            //"users" => $users,
         ]);
     }
 

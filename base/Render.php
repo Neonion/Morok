@@ -10,19 +10,14 @@ class Render
 {
     protected $layout;
 
-    public function __construct($layout)
+    public function __construct($layout, $view_folder, $view, $params = null)
     {
         $this->setLayout($layout);
 
-    }
-
-    public function render($view, $params = null, $view_folder)
-    {
         $path = realpath(dirname(__FILE__).'/../') . '/views/' . $view_folder . '/' . $view  . '.php';
-
         $content = $this->get_include_contents($path, $params);
-
         $layout_view = realpath(dirname(__FILE__).'/../') . '/views/layouts/'. $this->layout .'.php';
+
         include $layout_view;
     }
 
@@ -39,8 +34,8 @@ class Render
                 ${$key} = $value;
             }
             unset($params);
-
             include $filename;
+            
             return ob_get_clean();
         }
         return false;

@@ -9,11 +9,22 @@
 
 class Application
 {
+
     public function __construct()
     {
-        require_once (__DIR__ . '/Router.php');
-        require_once (__DIR__ . '/Render.php');
-        require_once (__DIR__ . '/Controller.php');
+        spl_autoload_register(function ($class_name) {
+            $folders = ['base', 'controllers', 'models'];
+            foreach ($folders as $folder) {
+                if (file_exists(realpath(dirname(__FILE__).'/../') . '/' . $folder . '/' . $class_name . '.php')) {
+                    $path = realpath(dirname(__FILE__).'/../') . '/' . $folder . '/' . $class_name . '.php';
+                }
+            }
+
+            if ($path == '') {
+                echo $class_name . 'Not found';
+            }
+            require_once $path;
+        });
     }
 
     public function start()
@@ -27,7 +38,8 @@ class Application
         return true;
     }
 
-    private static function getRoute(){
+    private static function getRoute()
+    {
         return $_SERVER['REQUEST_URI'];
     }
 
