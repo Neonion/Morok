@@ -57,13 +57,11 @@ class Router {
     public function autoload()
     {
         $path = realpath(dirname(__FILE__).'/../') . '/controllers/' . $this->routing['class'] . '.php';
-
         if (require_once $path) {
             return true;
         } else {
             return false;
         }
-
     }
 
 }

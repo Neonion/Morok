@@ -7,9 +7,8 @@
  */
 ?>
 
-
 <div style="margin: 0 auto; width: 400px; height: 400px; background-color: antiquewhite">
-    <p><?= $param1 ?> </p>
+    <? var_dump($param1); ?>
     <p><?= $param2 ?> </p>
 </div>
 

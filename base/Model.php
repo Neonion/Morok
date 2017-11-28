@@ -14,7 +14,6 @@ class Model
     {
         $this->db = mysqli_connect('localhost', '***', '***', '***')
             or die('Error ' . mysqli_error($this->db));
-
     }
 
     protected function execute($query)

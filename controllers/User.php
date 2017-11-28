@@ -17,7 +17,6 @@ class User extends Controller {
         //$update_user = $model->updateUser();
         $delete_user = $model->deleteUser();
         
-
         $form  = "index_second";
 
         $this->render('index', [
