@@ -19,10 +19,6 @@ class Application
                     $path = realpath(dirname(__FILE__).'/../') . '/' . $folder . '/' . $class_name . '.php';
                 }
             }
-
-            if ($path == '') {
-                echo $class_name . 'Not found';
-            }
             require_once $path;
         });
     }

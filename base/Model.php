@@ -12,7 +12,7 @@ class Model
 
     public function construct()
     {
-        $this->db = mysqli_connect('localhost', 'root', '6e9552c9bd8e', 'loveua_bi')
+        $this->db = mysqli_connect('localhost', '***', '***', '***')
             or die('Error ' . mysqli_error($this->db));
 
     }
